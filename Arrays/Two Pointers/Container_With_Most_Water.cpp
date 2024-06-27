@@ -61,7 +61,6 @@ public:
             water = max(water, area);
             
             //Then move towards large one because we can have better answer
-            if(height[i] <
             while(i < j && height[i] <= h)
                 i++;
             //Same,  move towards large one because we can have better answer
