@@ -49,7 +49,6 @@
 
 */
 
-
 //Using Segment Tree
 //T.C : O(q*log(n))
 //S.C : O(4*n)
