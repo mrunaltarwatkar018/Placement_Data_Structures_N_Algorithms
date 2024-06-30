@@ -1,10 +1,8 @@
 /* Leetcode Problem No.: 219. Contains Duplicate II  */
 
-
 /*
     Company Tags                : Airbnb, Palantir Technologies
     Leetcode Link               : https://leetcode.com/problems/contains-duplicate-ii/
-    Using sliding window        : https://github.com/MAZHARMIK/Interview_DS_Algo/blob/master/Sliding%20Window/Contains%20Duplicate%20II.cpp
 */
 
 // Approach 2: Using Sliding Window Technique
@@ -37,5 +35,5 @@ public:
 
 
 /*
-    YOUTUBE VIDEO ON THIS Qn : https://www.youtube.com/watch?v=B5v3KZpRreQ
+    YOUTUBE VIDEO ON THIS Qn : https://www.youtube.com/watch?v=AyiGBwFlMb8
 */
