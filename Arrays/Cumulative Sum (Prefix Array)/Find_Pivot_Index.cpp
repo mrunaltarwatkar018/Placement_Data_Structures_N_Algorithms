@@ -6,6 +6,9 @@
     GfG Link                    : https://practice.geeksforgeeks.org/problems/equilibrium-point-1587115620/1/?page=1&curated[]=1&sortBy=submissions#
 */
 
+
+// similar problem at Leetcode: 1991: Find the Middle Index In Array:  https://leetcode.com/problems/find-the-middle-index-in-array/description/
+
 //Approach-1 (Using O(n) space)
 
     // Function to find pivot index  in the array.
