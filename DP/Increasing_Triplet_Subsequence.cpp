@@ -4,6 +4,8 @@
     Letcode Link                : https://leetcode.com/problems/increasing-triplet-subsequence/
 */
 
+// GFG LINK: https://www.geeksforgeeks.org/problems/sorted-subsequence-of-size-3/1
+
 //Using Concept of Longest Increasing Subsequence
 // Time : O(n^2), Space : O(n)
 class Solution {
