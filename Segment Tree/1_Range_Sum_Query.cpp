@@ -1,13 +1,28 @@
 /*    GFG Problem. Sum of Query II    */
 
 /*
-    
     Company Tags                : AMAZON
     GfG Link                    : https://www.geeksforgeeks.org/problems/sum-of-query-ii5310/1
 */
 
 
 /************************************************************************ C++ ************************************************************************/
+
+/*
+    Summary : 
+        In this video, We see how we can use Segment Tree concepts to easily solve this problem - Query Sum II. 
+        This code implements a segment tree data structure to efficiently compute range sum queries on an array. 
+        The buildSegmentTree function constructs the segment tree recursively from the input array, where each node 
+        stores the sum of a segment of the array. The querySegmentTree function performs range sum queries on the 
+        segment tree. The querySum function initializes the segment tree and iterates through a list of queries to 
+        compute and return the sum for specified ranges in the array. Overall, this approach ensures that both 
+        construction of the segment tree and querying for sums are handled efficiently with O(logn) time complexity 
+        per query after an O(n) initial setup time, making it suitable for scenarios requiring frequent range sum 
+        computations on static arrays.
+*/
+
+
+
 //NOTE - Since this is Range Sum Query, you can simply solve it using Prefix Sum Array as well. But this is segment tree repo, so I have mentioned Segment tree approach
 //Using Segment Tree
 //T.C : O(q*log(n))
@@ -110,3 +125,10 @@ class Solution{
         return result;
     }
 }
+
+
+
+
+/*
+    YOUTUBE VIDEO ON THIS Qn : https://www.youtube.com/watch?v=VJ67kQHYbv8
+*/
