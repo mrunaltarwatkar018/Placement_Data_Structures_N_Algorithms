@@ -1,4 +1,4 @@
-/* Leetcode Problem No.: 3093. Longest Common Suffix Queries */
+/* Leetcode Problem No.: 3093. Replace Words */
 
 /*
     Company Tags                : UBER
