@@ -10,6 +10,7 @@
 
 /*
     Summary : 
+
         TrieNode Class: This inner class represents a node in the trie. Each node has 
         an array of 26 children (one for each lowercase English letter) and a boolean 
         isEndOfWord to mark the end of a word.
@@ -59,7 +60,7 @@ public:
             
     trieNode* root;
 
-    /** Inserts a word into the trie. */
+    /* Inserts a word into the trie. */
     void insert(string word) {
         trieNode *crawler = root; 
         
