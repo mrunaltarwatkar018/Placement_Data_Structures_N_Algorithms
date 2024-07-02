@@ -106,7 +106,7 @@ public:
                 int img2_j = j + col;
 
                 if(img2_i < 0 || img2_i >= n || img2_j < 0 || img2_j >= n)
-                continue; 
+                    continue; 
 
                 if(img1[i][j] == 1 && img2[img2_i][img2_j] == 1){
                     count++;
