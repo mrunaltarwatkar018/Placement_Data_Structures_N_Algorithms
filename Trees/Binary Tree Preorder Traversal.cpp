@@ -56,7 +56,41 @@ public:
 };
 
 
+// Approach 2: Morris approach
 
+//T.C : O(n)
+//S.C : O(1) - Not including result array
+class Solution {
+public:
+    vector<int> preorderTraversal(TreeNode* root) {
+        vector<int> result;
+        TreeNode* current = root;
+        TreeNode* prev = NULL;
+
+        while (current != NULL) {
+            if (current->left == NULL) {
+                result.push_back(current->val);
+                current = current->right;
+            } else {
+                prev = current->left;
+                while (prev->right != NULL && prev->right != current) {
+                    prev = prev->right;
+                }
+
+                if (prev->right == NULL) {
+                    result.push_back(current->val);
+                    prev->right = current;
+                    current = current->left;
+                } else {
+                    prev->right = NULL;
+                    current = current->right;
+                }
+            }
+        }
+
+        return result;
+    }
+};
 
 
 // more on: https://leetcodethehardway.com/tutorials/graph-theory/binary-tree
