@@ -40,6 +40,40 @@ public:
 
 //T.C : O(n)
 //S.C : O(1) - Not including result array
+
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+
+        vector<int> result;
+
+        TreeNode * curr = root;
+
+        while(curr != NULL) {
+            if (curr -> left == NULL) {
+                // L, V, R
+                result.push_back(curr -> val);
+                curr = curr -> right;
+            } else {
+                TreeNode * leftChild = curr-> left;
+
+                while (leftChild -> right != NULL) {
+                    leftChild = leftChild -> right;
+                }
+
+                leftChild -> right = curr;
+
+                // curr -> left ko app NULL mark kar date hai, first store then mark it
+                TreeNode * temp = curr;
+                curr = curr -> left;
+                temp -> left = NULL;
+            }
+        }
+        return result;
+    }
+};
+
+// another way
 class Solution {
 public:
     vector<int> inorderTraversal(TreeNode* root) {
@@ -146,7 +180,7 @@ public:
                     Store the current node in a temporary variable temp.
 
                     Move curr to its left child.
-                    
+
                     Set the left child of temp to NULL to break the thread.
 
             6.  Repeat steps 4 and 5 until curr becomes NULL.
