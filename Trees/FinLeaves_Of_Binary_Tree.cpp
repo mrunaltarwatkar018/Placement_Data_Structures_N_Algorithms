@@ -94,8 +94,44 @@ int main() {
     return 0;
 }
 
+// one way to solve 
+// class Solution {
+// public:
+//     map<int, vector<int>> mp;
+
+//     int height(TreeNode* root) {
+//         if (root == NULL) {
+//             return 0;
+//         }
+
+//         int leftHeight = height(root -> left);
+//         int rightHeight = height(root -> right);
+
+//         int height = 1 + max(leftHeight, rightHeight);
+
+//         mp[height].push_back(root -> val);
+
+//         return height;
+//     }
+
+//     vector<vector<int>> findLeaves(TreeNode * root) {
+//         height(root);
+
+//         vector<vector<int>> result;
+
+//         map<int, vector<int>> :: iterator itr;
+
+//         for (itr = mp.begin(); itr != mp.end(); itr++) {
+//             result.push_back(itr->second);
+//         }
+
+//         return result;
+//     }
+// };
 
 
+
+// another way with similar approach
 
 // class Solution {
 // public:
