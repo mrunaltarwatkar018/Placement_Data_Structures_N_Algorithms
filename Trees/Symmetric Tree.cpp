@@ -17,7 +17,7 @@ public:
             return false;
         }
 
-        if((leftSide -> val, rightSide -> val) 
+        if((leftSide -> val == rightSide -> val) 
             && check(leftSide -> left, rightSide -> right)
             && check(leftSide -> right, rightSide -> left)
         ) {
