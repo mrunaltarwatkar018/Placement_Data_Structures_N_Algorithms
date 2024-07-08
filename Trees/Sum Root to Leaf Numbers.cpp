@@ -68,7 +68,24 @@ public:
 
 
 
-
+//Recursion-2
+//T.C : O(n)
+//S.C : O(1)
+class Solution {
+public:
+    int sumNumbers(TreeNode* root, int sum = 0) {
+        if(!root)
+            return 0;
+        
+        if(!root->left && !root->right)
+            return sum*10+root->val;
+        
+        int ls = sumNumbers(root->left, sum*10+root->val);
+        int rs = sumNumbers(root->right, sum*10+root->val);
+        
+        return ls + rs;
+    }
+};
 
 
 
@@ -102,24 +119,7 @@ class Solution {
 }
 
 
-//Recursion-2
-//T.C : O(n)
-//S.C : O(1)
-class Solution {
-public:
-    int sumNumbers(TreeNode* root, int sum = 0) {
-        if(!root)
-            return 0;
-        
-        if(!root->left && !root->right)
-            return sum*10+root->val;
-        
-        int ls = sumNumbers(root->left, sum*10+root->val);
-        int rs = sumNumbers(root->right, sum*10+root->val);
-        
-        return ls + rs;
-    }
-};
+
 
 
 
