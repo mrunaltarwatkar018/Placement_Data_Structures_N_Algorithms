@@ -2,6 +2,7 @@
     "files.associations": {
         "random": "cpp",
         "limits": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "initializer_list": "cpp"
     }
 }
