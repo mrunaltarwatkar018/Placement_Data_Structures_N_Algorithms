@@ -59,6 +59,20 @@
                 return result;
             }
     };
+
+
+
+
+
+
+
+
+
+
+
+
+
+// other way
     class Solution {
         public:
         //Function to return list containing vertices in Topological order. 
