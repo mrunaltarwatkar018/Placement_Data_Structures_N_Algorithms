@@ -3,6 +3,7 @@
         "random": "cpp",
         "limits": "cpp",
         "vector": "cpp",
-        "initializer_list": "cpp"
+        "initializer_list": "cpp",
+        "string": "cpp"
     }
 }
