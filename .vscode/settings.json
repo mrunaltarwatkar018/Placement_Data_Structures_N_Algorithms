@@ -4,6 +4,7 @@
         "limits": "cpp",
         "vector": "cpp",
         "initializer_list": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "unordered_map": "cpp"
     }
 }
