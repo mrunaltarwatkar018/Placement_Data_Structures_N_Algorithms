@@ -1,7 +1,7 @@
 /*    Leetcode Problem No.: 1110. Delete Nodes And Return Forest    */
 
 /*
-    Company Tags                : Google, Amazon
+    Company Tags                : Google, Amazon, Meta
     Leetcode Qn Link            : https://leetcode.com/problems/delete-nodes-and-return-forest/
 */
 
