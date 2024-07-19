@@ -1,7 +1,7 @@
 /*    Leetcode Problem No.: 1530. Number of Good Leaf Nodes Pairs    */
 
 /*
-    Company Tags                : 
+    Company Tags                : TIKTOK
     Leetcode Link               : https://leetcode.com/problems/number-of-good-leaf-nodes-pairs/description/
 */
 
@@ -111,14 +111,127 @@ public:
 
 
 
-//Approach-2 
+//Approach-2 (Using DFS)
+//T.C : O(n*m^2) where m = number of leaf nodes
+//S.C : O(n*m) where m = number of leaf nodes
+
+/*
+    Summary :
+
+        The given C++ code defines a solution to count the number of good leaf node 
+        pairs within a given distance in a binary tree. Here is a step-by-step 
+        summary of the approach:
+
+        Helper Function solve:
+
+            The solve function is a recursive helper function that traverses the 
+            tree and calculates distances from each node to its leaf nodes.
+
+            Base Case: 
+                If the current node (root) is NULL, it returns a vector containing a 
+                single 0.
+
+            Leaf Node: 
+                If the current node is a leaf node (no left or right child), it 
+                returns a vector containing 1.
+
+            Recursive Case: 
+                For non-leaf nodes, it recursively calculates distances for the left 
+                and right subtrees.
+
+        Distance Calculation:
+
+            After obtaining distances from the left (left_d) and right (right_d) 
+            subtrees, it checks pairs of distances from these lists.
+
+            If the sum of any pair of distances is less than or equal to the given 
+            distance, it increments the goodLeafNodes counter.
+
+        Updating Distances:
+
+            The function then constructs a new list of distances (curr_d) for the 
+            current node by incrementing each valid distance from the left and right 
+            subtrees by 1 (to account for the distance to the current node itself).
+        
+        Returning Distances:
+
+            Finally, the updated list of distances is returned to the caller.
+
+        Main Function countPairs:
+
+            The countPairs function initializes the goodLeafNodes counter and calls 
+            the solve function with the root of the tree.
+
+            It returns the total count of good leaf node pairs.
+
+        Key Points:
+
+        Recursion: 
+            The solution leverages recursion to traverse the tree and compute 
+            distances.
+
+        Distance Lists: 
+            At each node, lists of distances to leaf nodes are maintained and   
+            updated.
+
+        Pairwise Comparison: 
+            Pairs of distances from left and right subtrees are compared to 
+            determine good leaf node pairs.
+
+        Efficiency: 
+            The method ensures that only valid distances (within the specified 
+            limit) are propagated up the tree to minimize unnecessary calculations.
+
+    This approach effectively combines tree traversal and distance computation to 
+    solve the problem within the constraints provided.
+*/
 
 
 
 
+class Solution {
+public:
 
+    vector<int> solve(TreeNode * root, int & distance, int & goodLeafNodes) {
+        if ( root == NULL) {
+            return {0};
+        }
 
+        if (root -> left == NULL && root -> right == NULL) {
+            return {1};
+        }
 
+        vector<int > left_distance = solve(root -> left, distance, goodLeafNodes);
+        vector<int > right_distance = solve(root -> right, distance, goodLeafNodes);
+
+        for ( int & l : left_distance) {
+            for ( int & r : right_distance) {
+                if (( l != 0 && r != 0) && l + r <= distance ) {
+                    goodLeafNodes++;
+                }
+            }
+        }
+
+        vector<int> cuur_distance;
+        for ( int & l : left_distance ) {
+            if ( l != 0 && l + 1 <= distance )
+                cuur_distance.push_back(l + 1);
+        }
+
+        for ( int & r : right_distance ) {
+            if ( r != 0 && r + 1 <= distance )
+                cuur_distance.push_back(r + 1);
+        }
+
+        return cuur_distance;
+    }
+
+    int countPairs(TreeNode* root, int distance) {
+        int goodLeafNodes = 0;
+        solve(root, distance, goodLeafNodes);
+        return goodLeafNodes;
+    }
+};
 
 
 
@@ -194,8 +307,57 @@ class Solution {
 
 
 
-//Approach-2 
+//Approach-2 (Using DFS)
+//T.C : O(n*m^2) where m = number of leaf nodes
+//S.C : O(n*m) where m = number of leaf nodes
+public class Solution {
 
+    public List<Integer> solve(TreeNode root, int distance, int[] goodLeafNodes) {
+        if (root == null) {
+            List<Integer> emptyList = new ArrayList<>();
+            emptyList.add(0);
+            return emptyList;
+        }
+
+        if (root.left == null && root.right == null) {
+            List<Integer> leafList = new ArrayList<>();
+            leafList.add(1);
+            return leafList;
+        }
+
+        List<Integer> leftDistances = solve(root.left, distance, goodLeafNodes);
+        List<Integer> rightDistances = solve(root.right, distance, goodLeafNodes);
+
+        for (int l : leftDistances) {
+            for (int r : rightDistances) {
+                if (l != 0 && r != 0 && l + r <= distance) {
+                    goodLeafNodes[0]++;
+                }
+            }
+        }
+
+        List<Integer> currentDistances = new ArrayList<>();
+        for (int ld : leftDistances) {
+            if (ld != 0 && ld + 1 <= distance) {
+                currentDistances.add(ld + 1);
+            }
+        }
+
+        for (int rd : rightDistances) {
+            if (rd != 0 && rd + 1 <= distance) {
+                currentDistances.add(rd + 1);
+            }
+        }
+
+        return currentDistances;
+    }
+
+    public int countPairs(TreeNode root, int distance) {
+        int[] goodLeafNodes = new int[1];
+        solve(root, distance, goodLeafNodes);
+        return goodLeafNodes[0];
+    }
+}
 
 
 
@@ -226,5 +388,6 @@ class Solution {
 
 
 /*
-    YOUTUBE VIDEO ON THIS Qn : https://www.youtube.com/watch?v=vrbJ7aDuK-A
+    YOUTUBE VIDEO ON THIS Qn :  Approach-1 : https://youtu.be/vrbJ7aDuK-A?si=3-8sRu8qdYcJvJf1
+                                Approach-2 : https://www.youtube.com/watch?v=AW-gpXiR5DQ
 */
