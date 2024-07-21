@@ -4,11 +4,16 @@
     MY YOUTUBE VIDE ON THIS Qn		: https://www.youtube.com/watch?v=uVl4ftleTes
     Company Tags                        : Accolite, Amazon, Flipkart, Microsoft, Moonfrog Labs, OYO Rooms
     GfG Link                            : https://practice.geeksforgeeks.org/problems/topological-sort/1#
+    
     Related Leetcode Qn                 : Course Schedule, Course Schedule II
     Course Schedule (Leetcode - 207)    : https://leetcode.com/problems/course-schedule/
     Course Schedule II (Leetcode - 210) : https://leetcode.com/problems/course-schedule-ii/
-    Solution (Course Schedule)          : 
-    Solution (Course Schedule II)       : 
+    
+    Solution (Course Schedule)          :   (Using BFS Kahn's Algorithm) https://github.com/mrunaltarwatkar018/Placement_Data_Structures_N_Algorithms/blob/master/Graph/Topological%20String/3_Course_Schedule_Using_BFS_Kahn's_Algorithm_Topological_Sort.cpp
+                                            (Using DFS Cycle Check) https://github.com/mrunaltarwatkar018/Placement_Data_Structures_N_Algorithms/blob/master/Graph/Topological%20String/4_Course_Schedule_Using_DFS_Cycle_Check.cpp
+    
+    Solution (Course Schedule II)       :   (Using BFS Kahn's Algorithm) https://github.com/mrunaltarwatkar018/Placement_Data_Structures_N_Algorithms/blob/master/Graph/Topological%20String/5_Course_Schedule-II_using_BFS_Kahn's_Algorithm.cpp
+                                            (Using DFS Cycle Check) https://github.com/mrunaltarwatkar018/Placement_Data_Structures_N_Algorithms/blob/master/Graph/Topological%20String/6_Course_Schedule-II_using_DFS.cpp
     NOTE: This can also be used to check if the graph contains cycle or not (Please see Line:56 below)
 */
 
