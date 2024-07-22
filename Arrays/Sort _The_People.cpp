@@ -1,7 +1,7 @@
 /* Leetcode Problem No.: 2418. Sort The People */
 
 /*
-    Company tags               : update soon
+    Company tags               : Adobe (2 times), Apple (2 times), Infosys
     Leetcode Link              : https://leetcode.com/problems/sort-the-people/description/?envType=daily-question&envId=2024-07-22
 */
 
