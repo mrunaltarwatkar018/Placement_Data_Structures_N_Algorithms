@@ -8,6 +8,7 @@
         "unordered_map": "cpp",
         "cmath": "cpp",
         "cstdlib": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "3_disjoint set (union-find)": "c"
     }
 }
