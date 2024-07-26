@@ -9,6 +9,7 @@
         "cmath": "cpp",
         "cstdlib": "cpp",
         "deque": "cpp",
-        "3_disjoint set (union-find)": "c"
+        "3_disjoint set (union-find)": "c",
+        "type_traits": "c"
     }
 }
