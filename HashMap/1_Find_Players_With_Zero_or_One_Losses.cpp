@@ -63,10 +63,20 @@ public:
     }
 };
 
+conver this code into python code using following template with similar approach
 
-
-
-
+First template (python3)
+class Solution:
+    def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
+        
+second template: (python)
+class Solution(object):
+    def findWinners(self, matches):
+        """
+        :type matches: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        
 
 // another simialr way
 class Solution {
@@ -105,6 +115,83 @@ public:
 };
 
 
+
+
+
+
+
+
+
+
+/************************************************************ PYTHON ************************************************************/
+
+from typing import List
+
+class Solution:
+    def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
+        lost_map = {}  # key: Player Number, value: count of losses
+
+        for match in matches:
+            loser = match[1]
+            lost_map[loser] = lost_map.get(loser, 0) + 1
+
+        not_lost = []
+        lost_once = []
+
+        for match in matches:
+            winner = match[0]
+            loser = match[1]
+
+            if winner not in lost_map:
+                not_lost.append(winner)
+                lost_map[winner] = 2  # mark as processed
+
+            if lost_map[loser] == 1:
+                lost_once.append(loser)
+
+        not_lost.sort()
+        lost_once.sort()
+
+        return [not_lost, lost_once]
+
+
+
+/************************************************************ PYTHON 3 ************************************************************/
+
+
+class Solution(object):
+    def findWinners(self, matches):
+        """
+        :type matches: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        lost_map = {}  # key: Player Number, value: count of losses
+
+        for match in matches:
+            loser = match[1]
+            lost_map[loser] = lost_map.get(loser, 0) + 1
+
+        not_lost = []
+        lost_once = []
+
+        for match in matches:
+            winner = match[0]
+            loser = match[1]
+
+            if winner not in lost_map:
+                not_lost.append(winner)
+                lost_map[winner] = 2  # mark as processed
+
+            if lost_map[loser] == 1:
+                lost_once.append(loser)
+
+        not_lost.sort()
+        lost_once.sort()
+
+        return [not_lost, lost_once]
+
+
+
 /************************************************************ JAVA ************************************************************/
 //T.C : O(n*logn)
 //S.C : O(n)
@@ -139,6 +226,18 @@ class Solution {
         return Arrays.asList(notLost, oneLos);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
