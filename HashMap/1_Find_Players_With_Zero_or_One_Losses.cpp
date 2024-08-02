@@ -63,20 +63,6 @@ public:
     }
 };
 
-conver this code into python code using following template with similar approach
-
-First template (python3)
-class Solution:
-    def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
-        
-second template: (python)
-class Solution(object):
-    def findWinners(self, matches):
-        """
-        :type matches: List[List[int]]
-        :rtype: List[List[int]]
-        """
-        
 
 // another simialr way
 class Solution {
