@@ -10,6 +10,11 @@
         "cstdlib": "cpp",
         "deque": "cpp",
         "3_disjoint set (union-find)": "c",
-        "type_traits": "c"
+        "type_traits": "c",
+        "temp": "c",
+        "array": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp"
     }
 }
