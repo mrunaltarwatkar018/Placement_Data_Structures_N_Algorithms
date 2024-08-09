@@ -193,6 +193,51 @@ class Solution(object):
 
 
 
+/******************************************** PYTHON 3 ********************************************/
+from typing import List
+
+class Solution:
+    def is_magic_square(self, grid: List[List[int]], r: int, c: int) -> bool:
+        """
+        Check if the 3x3 sub-grid is a magic square.
+        """
+        # Unique numbers between 1 and 9
+        st = set()
+        for i in range(3):
+            for j in range(3):
+                num = grid[r + i][c + j]
+                if num < 1 or num > 9 or num in st:
+                    return False
+                st.add(num)
+
+        # Check sum - rows and columns
+        SUM = sum(grid[r][c:c + 3])
+        for i in range(3):
+            if sum(grid[r + i][c:c + 3]) != SUM:  # Row sum
+                return False
+            if sum(grid[r + j][c + i] for j in range(3)) != SUM:  # Col sum
+                return False
+
+        # Check sum - diagonal and anti-diagonal
+        if sum(grid[r + i][c + i] for i in range(3)) != SUM:  # Diagonal sum
+            return False
+        if sum(grid[r + i][c + 2 - i] for i in range(3)) != SUM:  # Anti-diagonal sum
+            return False
+
+        return True
+
+    def numMagicSquaresInside(self, grid: List[List[int]]) -> int:
+        rows, cols = len(grid), len(grid[0])
+        count = 0
+        for i in range(rows - 2):
+            for j in range(cols - 2):
+                if self.is_magic_square(grid, i, j):
+                    count += 1
+        return count
+
+
+
+
 /******************************************** JAVA ********************************************/
 //Approach-1 (Brute Force)
 //T.C : O(m*n)
