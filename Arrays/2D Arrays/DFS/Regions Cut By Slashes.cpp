@@ -163,6 +163,179 @@ public:
 
 
 
+/************************************************************ PYTHON ************************************************/
+class Solution(object):
+    def regionsBySlashes(self, grid):
+        """
+        :type grid: List[str]
+        :rtype: int
+        """
+        directions = [[0, 1], [0, -1], [-1, 0], [1, 0]]
+
+        def numberOfIslandsDFS(matrix, i, j):
+            if i < 0 or i >= len(matrix) or j < 0 or j >= len(matrix[0]) or matrix[i][j] == 1:
+                return
+            matrix[i][j] = 1  # mark visited
+            for dir in directions:
+                new_i = i + dir[0]
+                new_j = j + dir[1]
+                numberOfIslandsDFS(matrix, new_i, new_j)
+
+        rows = len(grid)
+        cols = len(grid[0])
+        regions = 0
+
+        matrix = [[0] * (cols * 3) for _ in range(rows * 3)]  # M * N
+
+        # Populate the matrix using the mapping of '/', '\'
+        for i in range(rows):
+            for j in range(cols):
+                if grid[i][j] == '/':
+                    matrix[i * 3][j * 3 + 2] = 1
+                    matrix[i * 3 + 1][j * 3 + 1] = 1
+                    matrix[i * 3 + 2][j * 3] = 1
+                elif grid[i][j] == '\\':
+                    matrix[i * 3][j * 3] = 1
+                    matrix[i * 3 + 1][j * 3 + 1] = 1
+                    matrix[i * 3 + 2][j * 3 + 2] = 1
+
+        # Apply concept of "Number of Islands"
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if matrix[i][j] == 0:  # DFS
+                    numberOfIslandsDFS(matrix, i, j)
+                    regions += 1
+
+        return regions
+
+
+// another way
+class Solution:
+    def regionsBySlashes(self, grid: List[str]) -> int:
+        directions = [[0, 1], [0, -1], [-1, 0], [1, 0]]
+
+        def numberOfIslandsDFS(matrix, i, j):
+            if i < 0 or i >= len(matrix) or j < 0 or j >= len(matrix[0]) or matrix[i][j] == 1:
+                return
+            matrix[i][j] = 1  # mark visited
+            for dir in directions:
+                new_i = i + dir[0]
+                new_j = j + dir[1]
+                numberOfIslandsDFS(matrix, new_i, new_j)
+
+        rows = len(grid)
+        cols = len(grid[0])
+        regions = 0
+
+        matrix = [[0] * (cols * 3) for _ in range(rows * 3)]  # M * N
+
+        # Populate the matrix using the mapping of '/', '\'
+        for i in range(rows):
+            for j in range(cols):
+                if grid[i][j] == '/':
+                    matrix[i * 3][j * 3 + 2] = 1
+                    matrix[i * 3 + 1][j * 3 + 1] = 1
+                    matrix[i * 3 + 2][j * 3] = 1
+                elif grid[i][j] == '\\':
+                    matrix[i * 3][j * 3] = 1
+                    matrix[i * 3 + 1][j * 3 + 1] = 1
+                    matrix[i * 3 + 2][j * 3 + 2] = 1
+
+        # Apply concept of "Number of Islands"
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if matrix[i][j] == 0:  # DFS
+                    numberOfIslandsDFS(matrix, i, j)
+                    regions += 1
+
+        return regions
+
+
+
+/************************************************************ PYTHON 3 ************************************************/
+class Solution:
+    def regionsBySlashes(self, grid: List[str]) -> int:
+        directions = [[0, 1], [0, -1], [-1, 0], [1, 0]]
+
+        def numberOfIslandsDFS(matrix, i, j):
+            if i < 0 or i >= len(matrix) or j < 0 or j >= len(matrix[0]) or matrix[i][j] == 1:
+                return
+            matrix[i][j] = 1  # mark visited
+            for dir in directions:
+                new_i = i + dir[0]
+                new_j = j + dir[1]
+                numberOfIslandsDFS(matrix, new_i, new_j)
+
+        rows = len(grid)
+        cols = len(grid[0])
+        regions = 0
+
+        matrix = [[0] * (cols * 3) for _ in range(rows * 3)]  # M * N
+
+        # Populate the matrix using the mapping of '/', '\'
+        for i in range(rows):
+            for j in range(cols):
+                if grid[i][j] == '/':
+                    matrix[i * 3][j * 3 + 2] = 1
+                    matrix[i * 3 + 1][j * 3 + 1] = 1
+                    matrix[i * 3 + 2][j * 3] = 1
+                elif grid[i][j] == '\\':
+                    matrix[i * 3][j * 3] = 1
+                    matrix[i * 3 + 1][j * 3 + 1] = 1
+                    matrix[i * 3 + 2][j * 3 + 2] = 1
+
+        # Apply concept of "Number of Islands"
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if matrix[i][j] == 0:  # DFS
+                    numberOfIslandsDFS(matrix, i, j)
+                    regions += 1
+
+        return regions
+
+
+// another way
+from typing import List
+
+class Solution:
+    def regionsBySlashes(self, grid: List[str]) -> int:
+        rows, cols = len(grid), len(grid[0])
+        matrix = [[0] * (cols * 3) for _ in range(rows * 3)]
+
+        for i in range(rows):
+            for j in range(cols):
+                if grid[i][j] == '/':
+                    matrix[i*3][j*3+2] = 1
+                    matrix[i*3+1][j*3+1] = 1
+                    matrix[i*3+2][j*3] = 1
+                elif grid[i][j] == '\\':
+                    matrix[i*3][j*3] = 1
+                    matrix[i*3+1][j*3+1] = 1
+                    matrix[i*3+2][j*3+2] = 1
+
+        def dfs(i, j):
+            if i < 0 or i >= len(matrix) or j < 0 or j >= len(matrix[0]) or matrix[i][j] == 1:
+                return
+            matrix[i][j] = 1
+            dfs(i+1, j)
+            dfs(i-1, j)
+            dfs(i, j+1)
+            dfs(i, j-1)
+
+        regions = 0
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if matrix[i][j] == 0:
+                    dfs(i, j)
+                    regions += 1
+
+        return regions
+
+
+
+
+
+
 
 
 /************************************************************ JAVA ************************************************/
