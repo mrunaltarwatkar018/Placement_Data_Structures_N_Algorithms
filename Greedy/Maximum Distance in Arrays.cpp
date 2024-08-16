@@ -32,6 +32,54 @@ public:
 };
 
 
+/**************************************************** PYTHON ****************************************************/
+class Solution(object):
+    def maxDistance(self, arrays):
+        """
+        :type arrays: List[List[int]]
+        :rtype: int
+        """
+        MIN = arrays[0][0]
+        MAX = arrays[0][-1]
+        result = 0
+
+        for i in range(1, len(arrays)):
+            currMin = arrays[i][0]
+            currMax = arrays[i][-1]
+
+            result = max(result, abs(currMin - MAX), abs(currMax - MIN))
+
+            MAX = max(MAX, currMax)
+            MIN = min(MIN, currMin)
+
+        return result
+
+
+
+/**************************************************** PYTHON 3 ****************************************************/
+
+class Solution:
+    def maxDistance(self, arrays: List[List[int]]) -> int:
+        MIN = arrays[0][0]
+        MAX = arrays[0][-1]
+        result = 0
+
+        for i in range(1, len(arrays)):
+            currMin = arrays[i][0]
+            currMax = arrays[i][-1]
+
+            result = max(result, abs(currMin - MAX), abs(currMax - MIN))
+
+            MAX = max(MAX, currMax)
+            MIN = min(MIN, currMin)
+
+        return result
+
+
+
+
+
+
 /**************************************************** JAVA ****************************************************/
 //Approach - Simple Greedy
 //T.C : O(m)
