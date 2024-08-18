@@ -77,3 +77,25 @@ class Solution {
         return false;
     }
 }
+
+
+
+
+
+
+
+
+
+// Python 3
+class Solution:
+
+    def canSplit(self, arr):
+        left_sum = sum(arr)
+        right_sum = 0
+
+        for i in reversed(arr):
+            right_sum += i
+            left_sum -= i
+            if right_sum == left_sum:
+                return True
+        return False
