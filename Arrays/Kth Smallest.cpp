@@ -25,8 +25,6 @@ class Solution {
 };
 
 
-
-
 // Java Solution
 class Solution {
     public static int kthSmallest(int[] arr, int k) {
@@ -45,13 +43,6 @@ class Solution {
         return 0;
     }
 }
-
-
-
-
-
-
-
 
 
 // Python Solution
