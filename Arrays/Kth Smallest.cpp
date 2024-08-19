@@ -45,3 +45,23 @@ class Solution {
         return 0;
     }
 }
+
+
+
+
+
+
+
+
+
+// Python Solution
+class Solution:
+    def kthSmallest(self, arr, k):
+        mp = {}
+        for num in arr:
+            mp[num] = mp.get(num, 0) + 1
+        for key in sorted(mp.keys()):
+            k -= 1
+            if k == 0:
+                return key
+        return 0      
