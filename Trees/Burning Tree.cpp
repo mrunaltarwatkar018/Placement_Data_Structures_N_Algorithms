@@ -60,3 +60,68 @@ class Solution:
             self.min_time = time  # Update the minimum time
 
         return self.min_time
+
+
+
+
+
+
+
+// c++ code
+#include <queue>
+#include <unordered_map>
+#include <unordered_set>
+
+using namespace std;
+
+class Solution {
+public:
+    int minTime(Node* root, int target) {
+        unordered_map<Node*, Node*> parentMap;
+        Node* targetNode = nullptr;
+        int minTime = 0;
+
+        buildParentMap(root, target, parentMap, targetNode);
+
+        queue<pair<Node*, int>> q;
+        q.push({targetNode, 0});
+        unordered_set<Node*> visited;
+
+        while (!q.empty()) {
+            Node* currentNode = q.front().first;
+            int time = q.front().second;
+            q.pop();
+
+            visited.insert(currentNode);
+
+            if (parentMap.find(currentNode) != parentMap.end() && visited.find(parentMap[currentNode]) == visited.end()) {
+                q.push({parentMap[currentNode], time + 1});
+            }
+            if (currentNode->left && visited.find(currentNode->left) == visited.end()) {
+                q.push({currentNode->left, time + 1});
+            }
+            if (currentNode->right && visited.find(currentNode->right) == visited.end()) {
+                q.push({currentNode->right, time + 1});
+            }
+
+            minTime = time;  // Update the minimum time
+        }
+
+        return minTime;
+    }
+
+private:
+    void buildParentMap(Node* node, int target, unordered_map<Node*, Node*>& parentMap, Node*& targetNode) {
+        if (node->data == target) {
+            targetNode = node;
+        }
+        if (node->left) {
+            parentMap[node->left] = node;
+            buildParentMap(node->left, target, parentMap, targetNode);
+        }
+        if (node->right) {
+            parentMap[node->right] = node;
+            buildParentMap(node->right, target, parentMap, targetNode);
+        }
+    }
+};
