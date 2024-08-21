@@ -114,3 +114,43 @@ class Solution {
         return solve(0, n - 1, s);
     }
 }
+
+
+/**************************************************************** PYTHON ****************************************************************/
+class Solution(object):
+    def strangePrinter(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        n = len(s)
+        t = [[-1]*(n+1) for _ in range(n)]
+        
+        def solve(l, r, s):
+            if l == r:
+                return 1
+            elif l > r:
+                return 0
+            elif t[l][r] != -1:
+                return t[l][r]
+            
+            i = l + 1
+            while i <= r and s[i] == s[l]:
+                i += 1
+            
+            if i == r + 1:
+                return 1
+            
+            normal = 1 + solve(i, r, s)
+            
+            aage_ka = float('inf')
+            
+            for j in range(i, r+1):
+                if s[l] == s[j]:
+                    x = solve(i, j-1, s) + solve(j, r, s)
+                    aage_ka = min(aage_ka, x)
+            
+            t[l][r] = min(aage_ka, normal)
+            return t[l][r]
+        
+        return solve(0, n-1, s)
