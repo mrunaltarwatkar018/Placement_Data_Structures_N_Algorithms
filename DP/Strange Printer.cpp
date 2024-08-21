@@ -1,4 +1,4 @@
-/* Leetcode Problem No.: 664. Maximum Number of Points with Cost  */
+/* Leetcode Problem No.: 664. Strange Printer  */
 
 /*
     Company Tags                : NetEase
