@@ -26,3 +26,46 @@ class Solution {
     }
 
 };
+
+
+
+
+
+
+
+
+
+// Java Script Solution
+class Solution {
+    // Function to return max value that can be put in knapsack of capacity W.
+    knapSack(W, wt, val) {
+        // code here
+        const arr = []
+        for(let i = 0; i < wt.length; i++){
+            arr.push([wt[i], val[i]])
+        }
+        
+        arr.sort((a,b)=>{
+            if(a[0] == b[0]){
+                return b[1] - a[1]
+            }
+            return a[0]-b[0]
+        })
+        
+        let max = 0
+        const len = arr.length
+        const helper = (weight, sum, idx)=>{
+            max = Math.max(sum, max)
+            if(weight < 0 || idx >= len) return
+            
+            for(let i = idx; i < len; i++){
+                if(weight - arr[i][0] >= 0){
+                    helper(weight - arr[i][0], sum + arr[i][1], i + 1)
+                }
+            }
+        }
+        
+        helper(W, 0, 0)
+        return max
+    }
+}
