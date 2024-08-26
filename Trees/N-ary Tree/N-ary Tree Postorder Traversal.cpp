@@ -68,3 +68,54 @@ class Solution {
         return result;
     }
 }
+
+
+
+
+/*
+// Definition for a Node.
+class Node {
+    public int val;
+    public List<Node> children;
+
+    public Node() {}
+
+    public Node(int _val) {
+        val = _val;
+    }
+
+    public Node(int _val, List<Node> _children) {
+        val = _val;
+        children = _children;
+    }
+};
+*/
+
+
+// Approach 2
+// Left Right Root : Post Order Traversal
+
+
+// Time Complexity: O(N)
+// Space Complexity: O(N)  no extra space required
+
+
+class Solution {
+
+    public void dfs(Node root, List<Integer> List) {
+        if ( root == null ) {
+            return;
+        }
+
+        for ( Node child : root.children) {
+            dfs(child, List);
+        }
+        List.add(root.val);
+    }
+
+    public List<Integer> postorder(Node root) {
+        List<Integer> List = new ArrayList<> ();
+        dfs(root, List);
+        return List;
+    }
+}
