@@ -1,4 +1,4 @@
-/* GFG Problem No.: Implementing Dijkstra Algorithm   */
+/* GFG Problem No.: Implementing Dijkstra Algorithm With Priority Queue  */
 
 /*
     Company Tags                : Flipkart, Microsoft,
@@ -6,6 +6,9 @@
 */
 
 
+
+
+// Implementing Dijkstra Algorithm With Priority Queue
 class Solution
 {
 	public:
