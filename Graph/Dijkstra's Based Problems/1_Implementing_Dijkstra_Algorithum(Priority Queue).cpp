@@ -9,6 +9,9 @@
 
 
 // Implementing Dijkstra Algorithm With Priority Queue
+//Time : O(E * log(V))
+//E = number of edges
+//V = number of vertices
 class Solution
 {
 	public:
