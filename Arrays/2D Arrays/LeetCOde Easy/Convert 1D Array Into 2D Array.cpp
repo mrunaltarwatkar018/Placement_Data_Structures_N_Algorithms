@@ -1,7 +1,7 @@
 /* Leetcode Problem No.: 2022. Convert 1D Array Into 2D Array  */
 
 /*
-    Company Tags                : 
+    Company Tags                : Google, Amazon
     Leetcode Link               : https://leetcode.com/problems/convert-1d-array-into-2d-array
 */
 
