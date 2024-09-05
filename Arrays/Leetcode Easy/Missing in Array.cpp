@@ -66,3 +66,12 @@ class Solution {
         return desiredSum - sum;
     }
 };
+
+
+
+// C++ code  T.C =O(N) using STL
+
+    int missingNumber(int n, vector<int>& arr) {
+
+        return (n*(n+1))/2 - accumulate(arr.begin() , arr.end() , 0 ) ; 
+    }
