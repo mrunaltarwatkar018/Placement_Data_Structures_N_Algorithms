@@ -17,6 +17,25 @@ class Solution {
 
     // Note that the size of the array is n-1
     int missingNumber(int n, vector<int>& arr) {
+
+        int x=0;
+        for(auto z:arr)
+            x^=z;
+        for(int i=1;i<=n;i++)
+            x^=i;
+            
+        return x;
+    }
+};
+
+// C++ code  T.C =O(N) 
+
+
+class Solution {
+    public:
+
+    // Note that the size of the array is n-1
+    int missingNumber(int n, vector<int>& arr) {
         
         // Your code goes here
         int sum =0 , total;
