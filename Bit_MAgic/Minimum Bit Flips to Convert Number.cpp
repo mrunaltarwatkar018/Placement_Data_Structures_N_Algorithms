@@ -33,3 +33,29 @@ public:
 };
 
 
+//Approach-2 (Using XOR)
+//T.C : O(1) 
+//S.C : O(1)
+class Solution {
+public:
+    int minBitFlips(int start, int goal) {
+        //Basically we only have to count the bit positions where they both differ
+        //XOR can easily help with that
+
+        int XOR   = start ^ goal;
+        int count = 0;
+
+        //XOR now contains 1 bit set in positions
+        //where both bits were different in start and goal
+        //So, simply count those
+        while(XOR) {
+            count += (XOR & 1); //If the right most bit is 1
+
+            //shift right to rule out the right most bit
+            XOR = (XOR >> 1);
+        }
+        return count;
+    }
+};
+
+
