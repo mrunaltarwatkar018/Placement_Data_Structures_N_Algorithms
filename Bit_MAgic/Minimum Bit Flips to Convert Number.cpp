@@ -85,3 +85,41 @@ public:
 
 
 
+//Approach-3 (Count bits in XOR using Brian Kernighan’s Algorithm)
+//T.C : O(1) 
+//S.C : O(1)
+class Solution {
+public:
+    int minBitFlips(int start, int goal) {
+        //Basically we only have to count the bit positions where they both differ
+        //XOR can easily help with that
+
+        int XOR   = start ^ goal;
+        int count = 0;
+
+        //XOR now contains 1 bit set in positions
+        //where both bits were different in start and goal
+        //So, simply count those using Brian Kernighan’s Algorithm
+        while(XOR) {
+            XOR = XOR & (XOR-1);
+            //shift right to rule out the right most bit
+            count++;
+        }
+        return count;
+    }
+};
+
+
+//Approach-3 (count bits in XOR using __builtin_popcount())
+//T.C : O(1)
+//S.C : O(1)
+class Solution {
+public:
+    int minBitFlips(int start, int goal) {
+        //Basically we only have to count the bit positions where they both differ
+        //XOR can easily help with that
+
+        int XOR   = start ^ goal;
+        return __builtin_popcount(XOR); //simply count bits
+    }
+};
