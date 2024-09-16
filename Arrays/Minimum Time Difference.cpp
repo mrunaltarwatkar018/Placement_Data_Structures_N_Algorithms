@@ -52,10 +52,10 @@ class Solution {
 public:
     int findMinDifference(vector<string>& timePoints) {
         int n = timePoints.size();
-        vector<int> minutes(n);
+        vector<int> minutes(n);  // Space: O(n) because of sorting
 
         // Convert timePoints to minutes
-        for ( int i = 0; i < n; i++ ) {
+        for ( int i = 0; i < n; i++ ) { // Time: O(nlogn)
             string time = timePoints[i];
 
             string hourSubstr = time.substr(0, 2); //"HH"
@@ -84,6 +84,56 @@ public:
 };
 
 
+
+
+// using bucket sort
+//Bucket sort has a T.C : O(n + k) where n is the number of elements and k is the number of buckets. In this case, k is 1440, which is a constant.
+// T.C :  O(n)
+//S.C : O(n + k)
+class Solution {
+public:
+    int findMinDifference(vector<string>& timePoints) {
+        int n = timePoints.size();
+        vector<int> minutes(n);  
+
+        // Convert timePoints to minutes
+        for (int i = 0; i < n; i++) { 
+            string time = timePoints[i];
+
+            string hourSubstr = time.substr(0, 2); //"HH"
+            string minSubstr = time.substr(3); //"MM"
+
+            int hourInt = stoi(hourSubstr);
+            int minInt  = stoi(minSubstr);
+
+            minutes[i] = hourInt*60 + minInt;
+        }
+
+        // Implement bucket sort
+        vector<int> buckets[1440]; // 1440 possible minutes in a day
+        for (int i = 0; i < n; i++) {
+            buckets[minutes[i]].push_back(minutes[i]);
+        }
+
+        vector<int> sortedMinutes;
+        for (int i = 0; i < 1440; i++) {
+            for (int j = 0; j < buckets[i].size(); j++) {
+                sortedMinutes.push_back(buckets[i][j]);
+            }
+        }
+
+        // Initialize result with the maximum possible value
+        int result = INT_MAX;
+
+        // Find the minimum difference between adjacent times
+        for(int i = 1; i < n; i++) {
+            result = min(result, sortedMinutes[i] - sortedMinutes[i-1]);
+        }
+
+        // Check the circular case (between the first and last times)
+        return min(result, (24*60 - sortedMinutes[n-1]) + sortedMinutes[0]);
+    }
+};
 
 /************************************************************ JAVA ************************************************/
 //Approach-(Simple and straight forward convert to minutes and sort)
