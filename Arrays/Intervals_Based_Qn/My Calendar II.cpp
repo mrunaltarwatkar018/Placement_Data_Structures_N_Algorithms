@@ -44,14 +44,15 @@
 
 class MyCalendarTwo {
 public:
+// Space: O(n)
     vector<pair<int, int>> doubleOverlappedRegion;
     vector<pair<int, int>> overallBookings;
 
-    bool checkOverlap(int start1, int end1, int start2, int end2) {
+    bool checkOverlap(int start1, int end1, int start2, int end2) { // Time: O(1)
         return max(start1, start2) < min(end1, end2);
     }
 
-    pair<int, int> findOverlappedRegion(int start1, int end1, int start2, int end2) {
+    pair<int, int> findOverlappedRegion(int start1, int end1, int start2, int end2) { // Time: O(1)
         return {max(start1, start2), min(end1, end2)};
     }
 
@@ -61,14 +62,14 @@ public:
     
     bool book(int start, int end) {
         //check if tripple booking is being created or not
-        for(pair<int, int> region : doubleOverlappedRegion) {
+        for(pair<int, int> region : doubleOverlappedRegion) { // Time: O(n)
             if(checkOverlap(region.first, region.second, start, end)) {
                 return false; //tripple booking created
             }
         }
 
         //check if it is creating double bookings
-        for(pair<int, int> booking : overallBookings) {
+        for(pair<int, int> booking : overallBookings) { // Time: O(n)
             if(checkOverlap(booking.first, booking.second, start, end)) {
                 doubleOverlappedRegion.push_back(findOverlappedRegion(booking.first, booking.second, start, end));
             }
