@@ -59,7 +59,8 @@ public:
 
 
 // optimized way
-
+// T.C = O(m*n)
+// S.C = O(m*n)
 
 class Solution {
 public:
