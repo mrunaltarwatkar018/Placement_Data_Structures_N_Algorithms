@@ -1,4 +1,4 @@
-/* Leetcode Problem No.: 2097. Valid Arrangement of Pairs  */
+/* Leetcode Problem No.: 2097. Valid Arrangement of Pairs (Hierholzer's Algorithm) */
 
 /*
     Company Tags                : 
@@ -68,6 +68,9 @@ public:
         return result;
     }
 };
+
+
+
 
 
 //Approach-2 (DFS Using Recursion) - Hierholzer's Algorithm to find Euler Path
