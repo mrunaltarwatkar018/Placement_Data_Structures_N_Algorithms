@@ -18,7 +18,7 @@ public:
 	        
 	        degree[i] = adj[i].size();
 	        
-	    }
+	    } 
 	    
 	    for(int i = 0; i<V; i++) {
 	        if(degree[i] % 2 != 0) {
