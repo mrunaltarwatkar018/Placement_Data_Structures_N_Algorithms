@@ -48,6 +48,40 @@ class Solution {
 //Approach-2 (Using hashset)
 //T.C : O(n)
 //S.C : O(n)
+
+class Solution {
+    public:
+    bool canPair(vector<int> &nums, int k) {
+        // Code here.
+        int n = nums.size();
+        
+        
+        // if n is odd, no pair is formed here, so return false
+        if (n % 2 == 1) {
+            return false;
+        }
+        
+        unordered_set<int> st;
+        for (int i = 0; i < n; i++) {
+            int rem1 = nums[i] % k;
+            int rem2 = k - rem1;
+            
+            if (st.find(rem2) != st.end()) {
+                st.erase(rem2);
+            } else if (rem1 == 0 && st.find(0) != st.end()) {
+                st.erase(0);
+            } else {
+                st.insert(rem1);
+            }
+        }
+        
+        return st.size() == 0; // all match found and removed from the set
+    }
+};
+
+
+
+// or
 class Solution {
     public:
     bool canPair(vector<int> nums, int k) {
