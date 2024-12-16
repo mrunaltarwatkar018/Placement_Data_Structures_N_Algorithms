@@ -1,8 +1,8 @@
 /* Leetcode Problem No.: 3264. Final Array State After K Multiplication Operations I  */
 
 /*
-    Company Tags                : META
-    Leetcode Link               : https://leetcode.com/problems/number-of-good-pairs/
+    Company Tags                : Will update soon
+    Leetcode Link               : https://leetcode.com/problems/final-array-state-after-k-multiplication-operations-i
 */
 
 /************************************************************ C++ ************************************************/
