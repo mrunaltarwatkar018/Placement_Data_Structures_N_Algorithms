@@ -28,7 +28,7 @@ public:
 
     string replaceWords(vector<string>& dictionary, string sentence) {
         // store all words of a dictionary in a set
-        unordered_set<string> st(begin(dictionary), end(dictionary)); // space: O(n) n : toatl words : total words = n * l
+        unordered_set<string> st(begin(dictionary), end(dictionary)); // space: O(n) n : toatl words : Total  = n * l
 
         // tokanization of a given sentence
         stringstream ss(sentence);
