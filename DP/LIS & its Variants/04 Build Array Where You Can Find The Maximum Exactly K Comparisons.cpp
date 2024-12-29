@@ -128,7 +128,7 @@ public:
     }
 };
 
-//Approach-2 (Bottom Up)
+//Approach-3 (Bottom Up)
 //T.C : O(NKM^2)
 class Solution {
 public:
