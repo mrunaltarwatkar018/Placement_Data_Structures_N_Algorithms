@@ -1,12 +1,9 @@
 /* Leetcode Problem No.: 368. Largest Divisible Subset  */
 
-
-
 /*
     Company Tags                : GOOGLE
     Leetcode Link               : https://leetcode.com/problems/largest-divisible-subset/
 */
-
 
 /*
 Approach Summary : Using the same concept of LIS. Just sort the array so that we are ensured to tak elements in increasing order. We will be solving it using simple recursion just like LIS and simple bottom up just like LIS. Only difference will be to keep track of the LIS elements to return the result.
