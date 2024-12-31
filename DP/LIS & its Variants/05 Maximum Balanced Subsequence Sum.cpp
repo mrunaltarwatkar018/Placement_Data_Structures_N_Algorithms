@@ -7,7 +7,6 @@
 
 /********************************************************************************** C++ **********************************************************************************/
 
-
 /*
     The solutions below will give TLE but we must know how this is exactly the same Qn as LIS.
     We are just changing the condition of LIS here.
