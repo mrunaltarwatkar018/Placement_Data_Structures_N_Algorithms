@@ -267,6 +267,32 @@ public:
 
 
 
+// or
+int lengthOfLIS(vector<int>& nums) {
+        int n = nums.size();
+        map<int, int> mp;
+        int ans = INT_MIN;
+        mp[INT_MIN] = 0;
+        for(int i = 0; i < n; i++){
+            auto it = mp.upper_bound(nums[i]); 
+            int curr = 1;
+            if(it != mp.begin()) {
+                it--;
+                if(it->first < nums[i]){
+                    curr = curr + it->second;
+                }
+            }
+            mp[nums[i]] = max(mp[nums[i]], curr);
+            it = mp.upper_bound(nums[i]);
+            while(it != mp.end() && it->second <= curr) {
+                mp.erase(it++);
+            }
+            ans = max(ans, curr);
+        }
+        return ans;
+}
+
+
 // ************************************************************ JAVA ************************************************************
 //Approach-1 (TopDown: Recur+Memo) 
 //T.C : O(n*n)
