@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.xml": "xml",
         "random": "cpp",
         "limits": "cpp",
         "vector": "cpp",
@@ -15,6 +16,10 @@
         "array": "cpp",
         "functional": "cpp",
         "tuple": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "climits": "cpp",
+        "bitset": "cpp",
+        "regex": "cpp",
+        "valarray": "cpp"
     }
 }
