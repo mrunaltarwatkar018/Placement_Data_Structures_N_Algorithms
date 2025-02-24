@@ -1,4 +1,4 @@
-/* Leetcode Problem No.: 889. Most Profitable Path in a Tree   */
+/* Leetcode Problem No.: 2467. Most Profitable Path in a Tree   */
 
 /*
     Company Tags                : Intuit
