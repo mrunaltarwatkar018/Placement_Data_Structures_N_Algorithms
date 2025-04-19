@@ -1,7 +1,7 @@
 /*    Leetcode Problem No.: 2563. Count the Number of Fair Pairs  */
 
 /*
-    Company Tags                : will update soon
+    Company Tags                : will update soon ..
     Leetcode Link               : https://leetcode.com/problems/count-the-number-of-fair-pairs
 */
 
