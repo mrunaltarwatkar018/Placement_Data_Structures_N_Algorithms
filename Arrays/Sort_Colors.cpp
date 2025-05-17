@@ -1,7 +1,6 @@
-/* Leetcode Problem No.: 1424. Sort Colors  */
+/* Leetcode Problem No.: 75. Sort Colors  */
 
 /*
-    MY YOUTUBE VIDEO ON THIS Qn :    https://www.youtube.com/watch?v=KDiZ3jGXxO8
     Company Tags                :   Adobe, Amazon, Hike, MakeMyTrip, MAQ Software, Microsoft, Morgan Stanley, Ola Cabs,
                                     OYO Rooms, Paytm, Qualcomm, Samsung, SAP Labs, Snapdeal, Walmart, Yatra.com, Flipkart
     Leetcode Link               :   https://leetcode.com/problems/sort-colors/
