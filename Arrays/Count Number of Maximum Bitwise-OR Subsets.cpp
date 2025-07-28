@@ -1,7 +1,7 @@
 /* Leetcode Problem No.: 2044. Count Number of Maximum Bitwise-OR Subsets  */
 
 /*
-    Company Tags                : 
+    Company Tags                : Will update soon
     Leetcode Link               : https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets
 */
 
