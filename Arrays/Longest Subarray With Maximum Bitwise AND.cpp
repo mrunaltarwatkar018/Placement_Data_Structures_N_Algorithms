@@ -36,7 +36,6 @@
             encountered.
 
     This approach ensures we traverse the array in a single pass (O(n) time complexity).
-
 */
 
 class Solution {
