@@ -2,7 +2,7 @@
 
 
 /*
-    Company Tags                : GOOGLE
+    Company Tags                : GOOGLE, Online Assessment of Amazon for ML Summer School (3rd August, 2025)
     Leetcode Link               : https://leetcode.com/problems/patching-array/description/
 */
 
