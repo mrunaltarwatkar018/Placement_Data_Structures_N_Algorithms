@@ -1,4 +1,4 @@
-/* Leetcode Problem No.: 2483. Range Product Queries of Powers  */
+/* Leetcode Problem No.: 2787. Ways to Express an Integer as Sum of Powers  */
 
 /*
     Company Tags                : Goldman Sachs OA 
