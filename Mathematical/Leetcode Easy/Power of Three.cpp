@@ -1,7 +1,6 @@
 /* Leetcode Problem No.: 326. Power of Three  */
 
 /*
-    MY YOUTUBE VIDEO ON THIS Qn  : https://www.youtube.com/watch?v=11lCatB_H_A
     Company Tags                 : Google
     Leetcode Link                : https://leetcode.com/problems/power-of-three/description
 */
@@ -16,11 +15,9 @@ public:
     bool isPowerOfThree(int n) {
         if(n <= 0) {
             return false;
-          
         while(n%3 == 0) {
             n /= 3;
         }
-          
         return n == 1;  
     }
 };
