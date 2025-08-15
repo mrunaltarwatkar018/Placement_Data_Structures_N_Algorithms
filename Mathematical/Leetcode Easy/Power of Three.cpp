@@ -40,7 +40,6 @@ public:
 };
 
 
-
 //Approach-3 (simply checking with largest valid power of 3)
 //T.C : O(1)
 //S.C : O(1)
@@ -51,7 +50,6 @@ public:
         //NOTE :  3^19 = 1162261467
     }
 };
-
 
 
 //Approach-4 (Using logarithms and checking if log base 3 of n is an integer)
@@ -72,7 +70,6 @@ public:
 };
 
 
-
 /********************************************************************* JAVA *********************************************************************/
 //Approach-1 (simply dividing and checking iteratively)
 //T.C : O(log3(n))
@@ -90,7 +87,6 @@ class Solution {
 }
 
 
-
 //Approach-2 (simply dividing and checking recursively)
 //T.C : O(log3(n))
 //S.C : O(1)
@@ -104,8 +100,6 @@ class Solution {
         return n % 3 == 0 && isPowerOfThree(n / 3);
     }
 }
-
-
 
 
 //Approach-3 (simply checking with largest valid power of 3)
