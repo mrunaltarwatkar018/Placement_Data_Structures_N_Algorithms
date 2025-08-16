@@ -22,7 +22,6 @@
 */
 
 
-
 //NOTE - Since this is Range Sum Query, you can simply solve it using Prefix Sum Array as well. But this is segment tree repo, so I have mentioned Segment tree approach
 //Using Segment Tree
 //T.C : O(q*log(n))
