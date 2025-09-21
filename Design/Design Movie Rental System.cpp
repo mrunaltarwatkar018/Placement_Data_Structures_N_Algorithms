@@ -21,7 +21,7 @@
 // available          -> O(n) (sum of all available movies)
 // movieToShopPrice   -> O(n) (sum of all shop-price pairs)
 // rented             -> O(r) (r = total rented movies)
-class MovieRentingSystem {
+
 class MovieRentingSystem {
 public:
     typedef pair<int, int> P;
