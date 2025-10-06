@@ -2,7 +2,6 @@
 
 
 /*
-    MY YOUTUBE VIDEO ON THIS Qn : https://www.youtube.com/watch?v=t0C4MzNf-1o
     Company Tags                : Google
     Leetcode Link               : https://leetcode.com/problems/pacific-atlantic-water-flow/
 */
