@@ -1,4 +1,4 @@
-/* Leetcode Problem No.: 1014. Best Sightseeing Pair  */
+/* Leetcode Problem No.: 3350. Adjacent Increasing Subarrays Detection II  */
 
 /*
     Company Tags                : Will update soon
