@@ -1,6 +1,5 @@
 /* Leetcode Problem No.: 2043. Simple Bank System   */
 
-
 /*
     Company Tags                : will update later
     Leetcode Link               : https://leetcode.com/problems/simple-bank-system
