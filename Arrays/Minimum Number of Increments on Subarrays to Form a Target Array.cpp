@@ -6,7 +6,6 @@
     Harder Version of this Qn   : https://leetcode.com/problems/minimum-operations-to-make-array-equal-to-target/description/
 */
 
-
 /************************************************************ C++ ************************************************/
 //Simple Approach - Keeping track of prev diff
 //T.C : O(n)
