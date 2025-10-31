@@ -1,4 +1,4 @@
-/* Leetcode Problem No.: 3289. Smallest Number With All Set Bits  */
+/* Leetcode Problem No.: 3370. Smallest Number With All Set Bits  */
 
 /*
     Company Tags                : will update later
