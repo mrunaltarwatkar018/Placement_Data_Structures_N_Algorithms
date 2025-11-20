@@ -5,7 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/1-bit-and-2-bit-characters/description/
 */
 
-
 /*********************************************************** C++ **************************************************/
 //Approach-1 (Iterating from left to right)
 //T.C : O(n) 
