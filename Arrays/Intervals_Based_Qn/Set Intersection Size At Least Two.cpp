@@ -5,7 +5,6 @@
     Leetcode Qn Link            : https://leetcode.com/problems/set-intersection-size-at-least-two
 */
 
-
 /************************************************************************ C++ ************************************************************/
 //Approach (Using sorting)
 //T.C : O(nlogn)
