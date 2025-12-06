@@ -6,8 +6,6 @@
     Leetcode Link               : https://leetcode.com/problems/count-partitions-with-even-sum-difference
 */
 
-
-
 /*********************************************************** C++ **************************************************/
 //Approach-1 (Using cumulative sum)
 //T.C : O(n) ( 2 Pass  )
