@@ -5,7 +5,6 @@
     Leetcode Link                : https://leetcode.com/problems/count-odd-numbers-in-an-interval-range
 */
 
-
 /********************************************************************* C++ *********************************************************************/
 //Approach-1 - Brute Force
 //T.C : O(high-low)
