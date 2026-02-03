@@ -1,4 +1,3 @@
-/* Leetcode Problem No.: 3453. Separate Squares I */
 
 /*
     Company Tags                : Will update soon
