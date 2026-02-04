@@ -1,4 +1,4 @@
-/* Leetcode Problem No.: 3637. Divide an Array Into Subarrays With Minimum Cost II */
+/* Leetcode Problem No.: 3637. Trionic Array I */
 
 /*
     Company Tags                : will update later
