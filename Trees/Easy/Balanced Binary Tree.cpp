@@ -1,6 +1,5 @@
 /* Leetcode Problem No.: . Balanced Binary Tree */
 
-
 /*
     Company Tags                : Adobe, Apple, Capgemini, Meta, CBSL Group (India)
     Leetcode Link               : https://leetcode.com/problems/balanced-binary-tree
