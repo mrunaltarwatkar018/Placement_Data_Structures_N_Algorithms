@@ -1,6 +1,5 @@
 /* Leetcode Problem No.: 67. Add Binary */
 /*
-    MY YOUTUBE VIDEO ON THIS Qn : https://www.youtube.com/watch?v=gl_6rVkbrHI
     Company Tags                : Adobe, Amazon, Meta, Google, Microsoft
     Leetcode Link               : https://leetcode.com/problems/add-binary
 */
