@@ -1,7 +1,6 @@
 /* Leetcode Problem No.: 762. Prime Number of Set Bits in Binary Representation */
 
 /*
-    MY YOUTUBE VIDEO ON THIS Qn : https://www.youtube.com/watch?v=OhgrtltB5iM
     Company Tags                : Amazon
     Leetcode Link               : https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation
 */
