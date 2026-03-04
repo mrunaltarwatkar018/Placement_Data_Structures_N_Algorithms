@@ -6,7 +6,6 @@
     Leetcode Link               : https://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/
 */
 
-
 /**************************************************************** C++ ********************************************************************/
 //Method-1 (This method explains why Method-2 trick worked)
 //T.C : O(n*D), where D is the max digit which can be <= 9 ~= O(n)
