@@ -1,5 +1,7 @@
 /* Leetcode Problem No.: 1758. Minimum Changes To Make Alternating Binary String  */
 
+
+
 /*
     Company Tags                : MICROSOFT
     Leetcode Link               : https://leetcode.com/problems/minimum-changes-to-make-alternating-binary-string/
