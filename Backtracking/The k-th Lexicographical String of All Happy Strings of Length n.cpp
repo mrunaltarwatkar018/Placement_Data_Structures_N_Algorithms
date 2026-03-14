@@ -5,7 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/the-k-th-lexicographical-string-of-all-happy-strings-of-length-n
 */
 
-
 /************************************************************ C++ ************************************************/
 //Approach-1 (Khandani Backtracking remplate - storing all possible strings)
 //T.C : O(n * 3 * 2^(n-1)) ~= O(n*2^n)
