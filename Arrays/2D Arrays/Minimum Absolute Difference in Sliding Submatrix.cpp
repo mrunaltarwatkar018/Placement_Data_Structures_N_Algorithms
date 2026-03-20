@@ -5,7 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/minimum-absolute-difference-in-sliding-submatrix/description/
 */
 
-
 /************************************************** C++ **************************************************/
 //Approach - Iterate and check all k*k matrices
 //T.C : O(O((m−k)×(n−k)×k^2×logk)
