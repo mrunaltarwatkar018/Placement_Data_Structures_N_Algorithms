@@ -5,7 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-ii
 */
 
-
 /************************************************************ C++ *****************************************************/
 //Approach - Using map for grouping even and odd indices
 //T.C : O(n)
