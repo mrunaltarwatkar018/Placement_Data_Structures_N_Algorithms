@@ -1,4 +1,4 @@
-/* Leetcode Problem No.: 874. Subset Sum Problem   */
+/* Leetcode GFG Problem: Subset Sum Problem   */
 
 /*
     Company Tags                : Amazon, Microsoft
