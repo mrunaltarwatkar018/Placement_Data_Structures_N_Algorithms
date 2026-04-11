@@ -1,4 +1,4 @@
-/* Leetcode Problem No.: 3740. Minimum Distance Between Three Equal Elements I & II   */
+/* Leetcode Problem No.: 3740 & 3741 Minimum Distance Between Three Equal Elements I & II   */
 
 /*
     Company Tags                : will update later
