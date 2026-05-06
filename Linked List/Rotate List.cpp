@@ -5,7 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/rotate-list
 */
 
-
 /*********************************************************** C++ **************************************************/
 //Approach (Straight forward)
 //T.C : O(n) 
