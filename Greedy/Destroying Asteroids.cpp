@@ -5,7 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/destroying-asteroids
 */
 
-
 /*********************************************************** C++ **************************************************/
 //Approach-1 (Simple sorting and greedy)
 //T.C : O(n log n)
