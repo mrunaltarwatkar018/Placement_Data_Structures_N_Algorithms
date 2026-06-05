@@ -5,6 +5,7 @@
     Leetcode Link               : https://leetcode.com/problems/total-waviness-of-numbers-in-range-i
 */
 
+
 /*********************************************************** C++ **************************************************/
 //Approach (Linear Scan - Iterate over range and score each number)
 //T.C : O((num2 - num1) * log10(num2))  — for each number we scan its digits
