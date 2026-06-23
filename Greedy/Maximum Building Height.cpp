@@ -5,7 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/maximum-building-height/description
 */
 
-
 /*********************************************************** C++ **************************************************/
 //Approach (Math and Greedy)
 //T.C : O(n log n)
