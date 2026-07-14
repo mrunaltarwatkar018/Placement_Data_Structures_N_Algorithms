@@ -5,7 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/path-existence-queries-in-a-graph-ii/
 */
 
-
 /******************************************************************************* C++ ************************************************************************************************/
 //Approach (Using Binary Lifting variation)
 //T.C : O(N·log N + Q·log N)
