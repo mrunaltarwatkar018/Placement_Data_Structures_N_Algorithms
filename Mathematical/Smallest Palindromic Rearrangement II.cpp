@@ -1,4 +1,4 @@
-/* Leetcode Problem No.: 3518 . Smallest Palindromic Rearrangement II    */
+/* Leetcode Problem No.: 3518 . Smallest Palindromic Rearrangement II  */
 
 /*
     Company Tags                : will update later
