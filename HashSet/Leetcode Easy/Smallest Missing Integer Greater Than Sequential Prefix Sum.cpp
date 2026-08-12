@@ -5,7 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/smallest-missing-integer-greater-than-sequential-prefix-sum/description/
 */
 
-
 /*************************************************************** C++ ***************************************************************/
 //Approach-1 (using set)
 //T.C : O(n)
