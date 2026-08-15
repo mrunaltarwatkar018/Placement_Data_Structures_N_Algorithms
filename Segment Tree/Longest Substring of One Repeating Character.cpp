@@ -5,6 +5,10 @@
     Leetcode Link               : https://leetcode.com/problems/longest-substring-of-one-repeating-character/
 */
 
+
+
+
+
 /**************************************************************** C++ ****************************************************************/
 //Approach (Segment Tree)
 //T.C : O(n + klog(n)), build: O(n) and each update: O(log n), done k times → O(k·log n)
