@@ -1,231 +1,217 @@
-/* Leetcode Problem No.: 940. Distinct Subsequences */
+/* Leetcode Problem No.: 940. Distinct Subsequences II */
 
 /*
-    Company Tags          : Google, Twitter
-    Frequency             : 71%
-    Leetcode Link         : https://leetcode.com/problems/distinct-subsequences/
+    Company Tags          : Google
+    Leetcode Link         : https://leetcode.com/problems/distinct-subsequences-ii
 */
 
 
 /*********************************************************** C++ **************************************************/
-//Approach-1 (Recursion + MEmoization)
-//T.C : O(m*n)
-//S.C : O(m*n)
+//Approach-1 (Brute Force Naive Approach) - MLE
+//T.C : O(2^n)
+//S.C : O(2^n)
 class Solution {
 public:
+    int n;
+    unordered_set<string> st;
+    int dp[2001];
 
-    int dp[1001][1001];
-    int solve(string& s, string& t, int m, int n) {
-        if(n == 0)
-            return dp[m][n] = 1;
-        if(m == 0)
-            return dp[m][n] = 0;
-        
-        if(dp[m][n] != -1)
-            return dp[m][n];
-        
-        /*
-            (rabb) b (it)
-            (ra)   b (bbit)
-            (rab)  b (bit)
-            This can help to understand the if condition below
-        */
-        if(s[m-1] == t[n-1])
-            return dp[m][n] = solve(s, t, m-1, n) + solve(s, t, m-1, n-1);
-        else
-            return dp[m][n] = solve(s, t, m-1, n);
+    void solve(int i, string temp, string &s) {
+        if(i == n){
+            if(temp.size())
+                st.insert(temp);
+            return;
+        }
+
+        solve(i+1, temp+s[i], s);
+        solve(i+1, temp, s);
     }
 
-    int numDistinct(string s, string t) {
-        int m = s.length();
-        int n = t.length();
-        if(m < n)
-            return 0;
+    int distinctSubseqII(string s) {
+        n = s.size();
+        solve(0, "", s);
+        return st.size();
+    }
+};
+
+
+
+//Approach-2 (Recursion Memo with duplicate handling)
+//T.C : O(n)
+//S.C : O(n)
+class Solution {
+public:
+    int M = 1e9+7;
+    int dp[2001];
+    vector<int> prev; //prev[n] = last time when we saw this nth character (1-based indexing)
+
+    int solve(int n) {
+        if(n == 0)
+            return 1;
+
+        if(dp[n] != -1)
+            return dp[n];
+        
+        int total = (2*solve(n-1)) % M;
+
+        if(prev[n] != 0) {
+            int duplicates = solve(prev[n] - 1);
+            total = (total - duplicates + M) % M;
+        }
+
+        return dp[n] = total;
+    }
+
+    int distinctSubseqII(string s) {
+        int n = s.length();
+
         memset(dp, -1, sizeof(dp));
-        return solve(s, t, m, n);
+        prev.assign(n+1, 0);
+
+        vector<int> lastSeen(26, 0);
+        for(int i = 1; i <= n; i++) {
+            int idx = s[i-1] -'a';
+
+            prev[i] = lastSeen[idx];
+            lastSeen[idx] = i;
+        }
+
+        return (solve(n) - 1 + M) % M;
+
     }
 };
 
 
-//Approach-2 (Bottom UP DP)
-//T.C : O(m*n)
-//S.C : O(m*n)
+
+//Approach-3 (Bottom Up with duplicate handling)
+//T.C : O(n)
+//S.C : O(n)
 class Solution {
 public:
-    typedef unsigned long long ull;
-    int numDistinct(string s, string t) {
-        int m = s.length();
-        int n = t.length();
-        
-        vector<vector<ull>> dp(m+1, vector<ull>(n+1));
-        
-        //There is one way to generate empty string from given s
-        for(int row = 0; row<m+1; row++) {
-            dp[row][0] = 1;
+    int M = 1e9+7;
+    int dp[2001];
+    vector<int> prev; //prev[n] = last time when we saw this nth character (1-based indexing)
+
+    int distinctSubseqII(string s) {
+        int n = s.length();
+
+        memset(dp, -1, sizeof(dp));
+        prev.assign(n+1, 0);
+
+        vector<int> lastSeen(26, 0);
+        for(int i = 1; i <= n; i++) {
+            int idx = s[i-1] -'a';
+
+            prev[i] = lastSeen[idx];
+            lastSeen[idx] = i;
         }
-        
-        //There is zero way to generate non-empty string from given empty s
-        for(int col = 1; col<n+1; col++) {
-            dp[0][col] = 0;
-        }
-        
-        for(int i = 1; i<m+1; i++) {
-            for(int j = 1; j<n+1; j++) {
-                if(s[i-1] == t[j-1])
-                    dp[i][j] = dp[i-1][j-1] + dp[i-1][j];
-                else
-                    dp[i][j] = dp[i-1][j];
+
+        dp[0] = 1; //if(n == 0) return 1;
+
+        for(int i = 1; i <= n; i++) {
+            int total = (2 * dp[i-1]) % M;
+
+            if(prev[i] != 0) {
+                int duplicates = dp[prev[i] - 1];
+                total = (total - duplicates + M) % M;
             }
-        }
-        
-        
-        return dp[m][n];
-    }
-};
 
-//Approach-3 (Optimized Bottom UP DP)
-/*
-    If you notice, you are just requiring the previous row's value
-    See the if condition    - dp[i-1][j-1] + dp[i-1][j]; //(i-1) points to previous row
-    
-    See the else condition  - dp[i-1][j]; //(i-1) points to previous row
-    
-    So, why not simply store previous value in a 1-D array
-    We can then solve this qn, using O(m+n) space complexity
-*/
-//T.C : O(m*n)
-//S.C : O(m + n)
-class Solution {
-public:
-    typedef unsigned long long ull;
-    
-    int numDistinct(string s, string t) {
-        int m = s.length();
-        int n = t.length();
-
-        vector<ull> curr(n+1, 0); //Replace dp[i] with curr
-        vector<ull> prev(n+1, 0); //Replace dp[i-1] with prev
-        
-        prev[0] = curr[0] = 1;
-        
-        for(int i = 1; i<m+1; i++) {
-            
-            for(int j = 1; j<n+1; j++) {
-                
-                if(s[i-1] == t[j-1])
-                    curr[j] = prev[j-1] + prev[j];
-                else
-                    curr[j] = prev[j];
-            }
-            prev = curr;
+            dp[i] = total;
         }
 
-        return prev[n];
+        return (dp[n] - 1 + M) % M;
+
     }
 };
 
 
 
-/*********************************************************** JAVA **************************************************/
-//Approach-1 (Recursion + MEmoization)
-//T.C : O(m*n)
-//S.C : O(m*n)
+/*********************************************************** C++ **************************************************/
+//Approach-1 (Brute Force Naive Approach) - MLE
+//T.C : O(2^n)
+//S.C : O(2^n)
 class Solution {
-    int[][] dp = new int[1001][1001];
-    int solve(String s, String t, int m, int n) {
+    int n;
+    Set<String> st = new HashSet<>();
+    int[] dp = new int[2001];
+    void solve(int i, String temp, String s) {
+        if(i == n){
+            if(temp.length() > 0)
+                st.add(temp);
+            return;
+        }
+        solve(i+1, temp+s.charAt(i), s);
+        solve(i+1, temp, s);
+    }
+    public int distinctSubseqII(String s) {
+        n = s.length();
+        solve(0, "", s);
+        return st.size();
+    }
+}
+
+
+//Approach-2 (Recursion Memo with duplicate handling)
+//T.C : O(n)
+//S.C : O(n)
+class Solution {
+    int M = 1000000007;
+    int[] dp = new int[2001];
+    int[] prev; //prev[n] = last time when we saw this nth character (1-based indexing)
+    int solve(int n) {
         if(n == 0)
-            return dp[m][n] = 1;
-        if(m == 0)
-            return dp[m][n] = 0;
+            return 1;
+        if(dp[n] != -1)
+            return dp[n];
         
-        if(dp[m][n] != -1)
-            return dp[m][n];
-        
-        if(s.charAt(m-1) == t.charAt(n-1))
-            return dp[m][n] = solve(s, t, m-1, n) + solve(s, t, m-1, n-1);
-        else
-            return dp[m][n] = solve(s, t, m-1, n);
+        int total = (int)(2L * solve(n-1) % M);
+        if(prev[n] != 0) {
+            int duplicates = solve(prev[n] - 1);
+            total = (total - duplicates + M) % M;
+        }
+        return dp[n] = total;
     }
-    public int numDistinct(String s, String t) {
-        int m = s.length();
-        int n = t.length();
-        if(m < n)
-            return 0;
-        for(int[] row : dp)
-            Arrays.fill(row, -1);
-        return solve(s, t, m, n);
-    }
-}
-
-
-
-//Approach-2 (Bottom UP DP)
-//T.C : O(m*n)
-//S.C : O(m*n)
-class Solution {
-    public int numDistinct(String s, String t) {
-        int m = s.length();
-        int n = t.length();
-
-        
-        long[][] dp = new long[m+1][n+1];
-        
-        for(int row = 0; row<m+1; row++) {
-            dp[row][0] = 1;
+    public int distinctSubseqII(String s) {
+        int n = s.length();
+        Arrays.fill(dp, -1);
+        prev = new int[n+1];
+        int[] lastSeen = new int[26];
+        for(int i = 1; i <= n; i++) {
+            int idx = s.charAt(i-1) - 'a';
+            prev[i] = lastSeen[idx];
+            lastSeen[idx] = i;
         }
-        
-        for(int col = 1; col<n+1; col++) {
-            dp[0][col] = 0;
-        }
-        
-        for(int i = 1; i<m+1; i++) {
-            for(int j = 1; j<n+1; j++) {
-                if(s.charAt(i-1) == t.charAt(j-1))
-                    dp[i][j] = dp[i-1][j-1] + dp[i-1][j];
-                else
-                    dp[i][j] = dp[i-1][j];
-            }
-        }
-        
-        
-        return (int) dp[m][n];
+        return (solve(n) - 1 + M) % M;
     }
 }
 
 
-//Approach-3 (Optimized Bottom UP DP)
-/*
-    If you notice, you are just requiring the previous row's value
-    See the if condition    - dp[i-1][j-1] + dp[i-1][j]; //(i-1) points to previous row
-    
-    See the else condition  - dp[i-1][j]; //(i-1) points to previous row
-    
-    So, why not simply store previous value in a 1-D array
-    We can then solve this qn, using O(m+n) space complexity
-*/
-//T.C : O(m*n)
-//S.C : O(m + n)
+//Approach-3 (Bottom Up with duplicate handling)
+//T.C : O(n)
+//S.C : O(n)
 class Solution {
-    public int numDistinct(String s, String t) {
-        int m = s.length();
-        int n = t.length();
-
-        long[] curr = new long[n+1];
-        long[] prev = new long[n+1];
-        
-        prev[0] = curr[0] = 1;
-        
-        for(int i = 1; i<m+1; i++) {
-            
-            for(int j = 1; j<n+1; j++) {
-                
-                if(s.charAt(i-1) == t.charAt(j-1))
-                    curr[j] = prev[j-1] + prev[j];
-                else
-                    curr[j] = prev[j];
-            }
-            prev = curr.clone();
+    int M = 1000000007;
+    int[] dp = new int[2001];
+    int[] prev; //prev[n] = last time when we saw this nth character (1-based indexing)
+    public int distinctSubseqII(String s) {
+        int n = s.length();
+        Arrays.fill(dp, -1);
+        prev = new int[n+1];
+        int[] lastSeen = new int[26];
+        for(int i = 1; i <= n; i++) {
+            int idx = s.charAt(i-1) - 'a';
+            prev[i] = lastSeen[idx];
+            lastSeen[idx] = i;
         }
-        return (int) prev[n];
+        dp[0] = 1; //if(n == 0) return 1;
+        for(int i = 1; i <= n; i++) {
+            int total = (int)(2L * dp[i-1] % M);
+            if(prev[i] != 0) {
+                int duplicates = dp[prev[i] - 1];
+                total = (total - duplicates + M) % M;
+            }
+            dp[i] = total;
+        }
+        return (dp[n] - 1 + M) % M;
     }
 }
