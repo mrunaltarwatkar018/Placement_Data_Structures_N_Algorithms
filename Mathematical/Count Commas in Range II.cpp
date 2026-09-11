@@ -5,9 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/count-commas-in-range-ii/description/
 */
 
-
-
-
 /*********************************************************** C++ **************************************************/
 //Approach-1 (counting simulation)
 //T.C : O(log1000(n))
