@@ -5,7 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/circle-and-rectangle-overlapping/description/
 */
 
-
 /*********************************************************** C++ **************************************************/
 //Approach-1 (Nearest point check and compare)
 //T.C : O(1)
