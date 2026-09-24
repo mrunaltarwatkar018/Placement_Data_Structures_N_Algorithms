@@ -5,9 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/find-x-value-of-array-ii/description/
 */
 
-
-
-
 /**************************************************************** C++ ****************************************************************/
 //Approach (Segment Tree + concept of Find X Value of Array I
 //T.C : O((n + q*logn) * k)   [Build = O(n*k), each Update/Query = O(k*logn)]
