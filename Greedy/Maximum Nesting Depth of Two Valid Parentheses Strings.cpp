@@ -5,7 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/maximum-nesting-depth-of-two-valid-parentheses-strings/description/
 */
 
-
 /*********************************************************** C++ **************************************************/
 //Approach - Greedily divide depth in half
 //T.C - O(n)
