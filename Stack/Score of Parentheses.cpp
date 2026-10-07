@@ -5,9 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/score-of-parentheses
 */
 
-
-
-
 /********************************************************************** C++ **********************************************************************/
 //Approach-1 (Using stack or vector as stack)
 //T.C : O(n)
