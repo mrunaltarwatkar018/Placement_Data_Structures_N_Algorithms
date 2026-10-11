@@ -5,7 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/minimum-sum-of-squared-difference/
 */
 
-
 /********************************************************************* C++ ****************************************************************/
 //Approach-1 (Brute Force - TLE)
 //T.C : O((n + k1 + k2) * log n), k is huge
