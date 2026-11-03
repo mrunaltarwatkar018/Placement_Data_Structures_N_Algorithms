@@ -5,9 +5,6 @@
     Leetcode Link               : https://leetcode.com/problems/minimum-moves-to-equal-array-elements
 */
 
-
-
-
 /*********************************************************** C++ **************************************************/
 //Approach-1 (Brute Force)
 //T.C : O(n^2)
